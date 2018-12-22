@@ -29,7 +29,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
 	Route::get('dashboard','AdminController@index');
 	Route::get('/','Auth\LoginController@showLoginForm')->name('admin.login');
-	Route::get('/login','Auth\LoginController@showLoginForm')->name('admin.login');
 	Route::post('/','Auth\LoginController@login');
 	Route::post('admin-password/email','Auth\ForgotPasswordController@sendResetLinkEmail')->name('admin.password.email');
 	Route::get('admin-password/reset','Auth\ForgotPasswordController@showLinkRequestForm')->name('admin.password.request');
