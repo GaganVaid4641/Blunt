@@ -1,3 +1,9 @@
 Youtube Tutorial - https://www.youtube.com/watch?v=jnvu1GpylP0
 
 Multi Auth Laravel - https://medium.com/@shuvosutradhar/laravel-5-6-multi-auth-d6641dd2d6e2
+
+compile assets --
+
+npm run dev
+
+npm run watch (automatically running)
