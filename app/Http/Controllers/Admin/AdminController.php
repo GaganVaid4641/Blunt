@@ -1,6 +1,8 @@
 <?php
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+
 class AdminController extends Controller
 {
     /**
@@ -12,13 +14,13 @@ class AdminController extends Controller
     {
         $this->middleware('auth:admin');
     }
-/**
+    /**
      * Show the application dashboard.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
-    { dd('kfjkf');
+    {
         return view('admin.dashboard');
     }
 }

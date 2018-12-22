@@ -1,5 +1,5 @@
 <?php
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
@@ -38,7 +38,7 @@ use AuthenticatesUsers;
      */
     public function showLoginForm()
     {
-        return view('admin.login');
+        return view('admin.auth.login');
     }
 /**
      * Get the guard to be used during authentication.
