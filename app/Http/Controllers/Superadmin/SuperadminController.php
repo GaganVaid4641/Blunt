@@ -1,9 +1,9 @@
 <?php
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Superadmin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Auth;
-class AdminController extends Controller
+class SuperadminController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -12,9 +12,8 @@ class AdminController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth:admin');
+        $this->middleware('auth:superadmin');
     }
-
     /**
      * Show the application dashboard.
      *
@@ -22,17 +21,17 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.dashboard');
+        return view('superadmin.dashboard');
     }
 
     /**
-     * Logout for admin
+     * Logout for superadmin
      */
     public function logout(Request $request)
     {
-        Auth::guard('admin')->logout();
+        Auth::guard('superadmin')->logout();
         $request->session()->flush();
         $request->session()->regenerate();
-        return redirect('admin');
+        return redirect('superadmin');
     }
 }

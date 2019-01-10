@@ -16,8 +16,8 @@ return [
             'driver' => 'token',
             'provider' => 'users',
         ],
-        // Admin guards
 
+        // Admin guards
         'admin' => [
             'driver' => 'session',
             'provider' => 'admins',
@@ -25,6 +25,16 @@ return [
         'admin-api' => [
                     'driver' => 'token',
                     'provider' => 'admins',
+        ],
+
+        // Super Admin guards
+        'superadmin' => [
+            'driver' => 'session',
+            'provider' => 'superadmins',
+        ],
+        'superadmin-api' => [
+                    'driver' => 'token',
+                    'provider' => 'superadmins',
         ],
     ],
 
@@ -43,6 +53,10 @@ return [
             'driver' => 'eloquent',
             'model' => App\Admin::class,
         ],
+        'superadmins' => [
+            'driver' => 'eloquent',
+            'model' => App\Superadmin::class,
+        ],
     ],
 
 
@@ -55,6 +69,11 @@ return [
         ],
         'admins' => [
             'provider' => 'admins',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ],
+        'superadmins' => [
+            'provider' => 'superadmins',
             'table' => 'password_resets',
             'expire' => 60,
         ],

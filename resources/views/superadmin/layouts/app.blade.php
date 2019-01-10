@@ -12,7 +12,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="shortcut icon" type="image/png" href="assets/images/icon/favicon.ico">
 
-        @include('admin.inc.admin_css')
+        @include('superadmin.inc.admin_css')
 
         <!-- modernizr css -->
         <script src="{{ asset('js/vendor/modernizr-2.8.3.min.js') }}"></script>    
@@ -232,12 +232,12 @@
                                         <div class="dropdown-menu">
                                             <a class="dropdown-item" href="#">Message</a>
                                             <a class="dropdown-item" href="#">Settings</a>
-                                            <a class="dropdown-item" href="{{ route('admin.logout') }}"
+                                            <a class="dropdown-item" href="{{ route('superadmin.logout') }}"
                                                 onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();">
                                                 Log Out
                                             </a>
-                                            <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
+                                            <form id="logout-form" action="{{ route('superadmin.logout') }}" method="POST" style="display: none;">
                                                 {{ csrf_field() }}
                                             </form>
                                         </div>
@@ -439,6 +439,6 @@
         </div>
         <script src="{{ asset('js/app.js') }}"></script>
         <!-- jquery latest version -->
-        @include('admin.inc.admin_js')
+        @include('superadmin.inc.admin_js')
     </body>
 </html>
